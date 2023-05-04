@@ -5,20 +5,28 @@
 
 using namespace std;
 
-int fibonacci(int a);
+unsigned long long fibonacci(int a);
 
 int main()
 {
+    bool chiudi = false;
     int n;
 
-    cout << "Inserisci un numero: ";
-    cin >> n;
+    while (!chiudi) {
+        system("cls");
+        cout << "Inserisci un numero: ";
+        cin >> n;
 
-    cout << "il " << n << " numero di Fibonacci e:\t" << fibonacci(n) << endl;
-   
+        if (n != 0)
+            cout << "il " << n << " numero di Fibonacci e:\t" << fibonacci(n) << endl;
+        else
+            chiudi = true;
+
+        system("pause");
+    }
 }
 
-int fibonacci(int a) {
+unsigned long long fibonacci(int a) {
     if (a < 3)
         return 1;
     else
